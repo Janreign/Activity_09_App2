@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.google.android.material.snackbar.Snackbar
 import ph.kodego.aragon.janreign.activity_09_app2.databinding.StudentItemBinding
 import ph.kodego.aragon.janreign.activity_09_app2.model.Student
+import ph.kodego.aragon.janreign.fragments.model.Student
 
 class StudentAdapter (var students: ArrayList<Student>)
     : RecyclerView.Adapter<StudentAdapter.StudentViewHolder>() {
@@ -36,6 +37,8 @@ class StudentAdapter (var students: ArrayList<Student>)
                 parent, false)
         return StudentViewHolder(itemBinding)
     }
+
+
     override fun onBindViewHolder(holder: StudentAdapter.StudentViewHolder,
                                   position: Int){
         holder.bindStudent(students[position])
