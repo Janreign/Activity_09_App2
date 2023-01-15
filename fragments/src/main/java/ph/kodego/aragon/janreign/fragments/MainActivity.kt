@@ -1,12 +1,15 @@
-package ph.kodego.aragon.janreign.activity_09_app2
+package ph.kodego.aragon.janreign.fragments
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
 import ph.kodego.aragon.janreign.activity_09_app2.adapter.StudentAdapter
-import ph.kodego.aragon.janreign.activity_09_app2.databinding.ActivityMainBinding
-import ph.kodego.aragon.janreign.activity_09_app2.model.Student
+//import ph.kodego.aragon.janreign.activity_09_app2.adapter.StudentAdapter
+import ph.kodego.aragon.janreign.fragments.databinding.ActivityMainBinding
+import ph.kodego.aragon.janreign.fragments.model.Student
+//import ph.kodego.aragon.janreign.fragments.model.SwipeCallback
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,6 +17,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var studentAdapter: StudentAdapter
     private var students: ArrayList<Student> = ArrayList()
     private lateinit var itemTouchHelper: ItemTouchHelper
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,7 +28,7 @@ class MainActivity : AppCompatActivity() {
 
         studentAdapter = StudentAdapter(students)
         binding.list.layoutManager = LinearLayoutManager(applicationContext)
-//        binding.list.layoutManager = GridLayoutManager(applicationContext, 2)
+        binding.list.layoutManager = GridLayoutManager(applicationContext, 2)
         binding.list.adapter = studentAdapter
 
         binding.addStudentButton.setOnClickListener{
@@ -35,10 +39,10 @@ class MainActivity : AppCompatActivity() {
             )
         }
 
-        var swipeCallback = SwipeCallBack (0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT)
-        swipeCallback.studentAdapter = studentAdapter
-        itemTouchHelper = ItemTouchHelper(swipeCallback)
-        itemTouchHelper.attachToRecyclerView(binding.list)
+//        var swipeCallback = SwipeCallback (0, ItemTouchHelper.LEFT or ItemTouchHelper.RIGHT)
+//        swipeCallback.studentAdapter = studentAdapter
+//        itemTouchHelper = ItemTouchHelper(swipeCallback)
+//        itemTouchHelper.attachToRecyclerView(binding.list)
     }
 
     fun init (){

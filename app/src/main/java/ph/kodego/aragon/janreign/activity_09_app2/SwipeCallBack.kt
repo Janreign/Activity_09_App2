@@ -3,14 +3,12 @@ package ph.kodego.aragon.janreign.activity_09_app2
 import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.drawable.ColorDrawable
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.RecyclerView
 import ph.kodego.aragon.janreign.activity_09_app2.adapter.StudentAdapter
 
-class SwipeCallback (dragDirs: Int, swipeDirs: Int) :
-ItemTouchHelper.SimpleCallback(dragDirs, swipeDirs) {
+class SwipeCallBack (dragDirs: Int, swipeDirs: Int) :
+    ItemTouchHelper.SimpleCallback(dragDirs, swipeDirs) {
     var studentAdapter: StudentAdapter? = null
     var background: ColorDrawable = ColorDrawable(Color.BLACK)
 

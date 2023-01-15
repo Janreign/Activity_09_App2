@@ -11,27 +11,27 @@ import ph.kodego.aragon.janreign.activity_09_app2.databinding.ActivityLoginBindi
 class LoginActivity : AppCompatActivity() {
 
 
-    private lateinit var binding: ActivityLoginBinding
-    private lateinit var username: String
-    private lateinit var password: String
+        private lateinit var binding: ActivityLoginBinding
+        private lateinit var username: String
+        private lateinit var password: String
 
-    private val launchRegister = registerForActivityResult(
-        ActivityResultContracts.StartActivityForResult()
-    ) { result ->
-        val data = result.data
+        private val launchRegister = registerForActivityResult(
+            ActivityResultContracts.StartActivityForResult()
+        ) { result ->
+            val data = result.data
 
-        Snackbar.make(
-            binding.root,
-            "Registered ${data!!.getStringExtra("username")}",
-            Snackbar.LENGTH_LONG
-        ).show()
+            Snackbar.make(
+                binding.root,
+                "Registered ${data!!.getStringExtra("username")}",
+                Snackbar.LENGTH_LONG
+            ).show()
 
-    }
+        }
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        binding = ActivityLoginBinding.inflate(layoutInflater)
-        setContentView(binding.root)
+        override fun onCreate(savedInstanceState: Bundle?) {
+            super.onCreate(savedInstanceState)
+            binding = ActivityLoginBinding.inflate(layoutInflater)
+            setContentView(binding.root)
 
 //        binding.btnSubmit.setOnClickListener{
 //
@@ -43,27 +43,27 @@ class LoginActivity : AppCompatActivity() {
 //            Snackbar.make(binding.root, "SUBMIT",Snackbar.LENGTH_SHORT).show()
 //            Toast.makeText(applicationContext, "Submit", Toast.LENGTH_SHORT).show()
 
-        binding.btnRegister.setOnClickListener {
+            binding.btnRegister.setOnClickListener {
 
-            var goToRegister = Intent(this, RegisterActivity::class.java)
-            launchRegister.launch(goToRegister)
-        }
+                var goToRegister = Intent(this, RegisterActivity::class.java)
+                launchRegister.launch(goToRegister)
+            }
 
-        binding.btnForgotpassword.setOnClickListener {
+            binding.btnForgotpassword.setOnClickListener {
 
-            var goToLogin = Intent(this, ForgotPasswordActivity::class.java)
-            launchRegister.launch(goToLogin)
-        }
+                var goToLogin = Intent(this, ForgotPasswordActivity::class.java)
+                launchRegister.launch(goToLogin)
+            }
 
-        binding.btnSubmit.setOnClickListener {
+            binding.btnSubmit.setOnClickListener {
 
-            var goToMain = Intent(this, MainActivity::class.java)
-            launchRegister.launch(goToMain)
-        }
+                var goToMain = Intent(this, MainActivity::class.java)
+                launchRegister.launch(goToMain)
+            }
 //
 //        override fun onBackPressed() {
 //            super.onBackPressed()
 //        }
-    }
+        }
 
-}
+    }

@@ -15,5 +15,4 @@ class RegisterActivity : AppCompatActivity() {
         setContentView(binding.root)
 
     }
-
 }

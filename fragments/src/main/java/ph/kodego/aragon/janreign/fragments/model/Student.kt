@@ -1,3 +1,3 @@
-package ph.kodego.aragon.janreign.activity_09_app2.model
+package ph.kodego.aragon.janreign.fragments.model
 
 class Student (var firstname:String = "Unknown", val lastname:String = "Unknown")

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@+id/studentlistfragment">
+
+
+    <fragment
+        android:id="@+id/studentlistfragment"
+        android:name="ph.kodego.aragon.janreign.fragments.viewpager.StudentListFragment"
+        android:label="Student List"
+        tools:layout="@layout/fragment_student_list">
+
+        <action
+            android:id="@+id/action_firstfragment_to_secondfragment3"
+            app:destination="@+id/searchfragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/searchfragment"
+        android:name="ph.kodego.aragon.janreign.fragments.viewpager.SearchFragment"
+        android:label="Search"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_searchfragment_to_transaction"
+            app:destination="@id/transaction" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/transaction"
+        android:name="ph.kodego.aragon.janreign.fragments.viewpager.TransactionFragment"
+        android:label="Transaction"
+        tools:layout="@layout/fragment_search">
+
+    </fragment>
+
+</navigation>
